@@ -6,7 +6,7 @@ module.exports = function(line){
         name    : arr[1],
         adress  : arr[2],
         apt     : arr[3],
-        date    : arr[4],
+        date    : arr[4].split("."),
         account : arr[5],
         balance : arr[6],
         amount  : arr[7],
@@ -19,7 +19,6 @@ module.exports = function(line){
     for (const row of billType) {
         result.types.push(row.split("$"));
     }
-
     
     return result;
 }

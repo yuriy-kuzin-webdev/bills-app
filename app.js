@@ -20,10 +20,11 @@ app.post('/bill', (request, response) => {
     const line = getline(id);
 
     if(!line)
-        response.render('index', {search : false});
+        response.render('index', {search : false, id : id});
     else
     {
         const result = textparser(line);
+        console.log(result);
         response.render('bill', result)
     }
 })
